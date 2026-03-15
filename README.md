@@ -2,7 +2,6 @@
 
 [![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](COPYING)
 [![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)]()
-![Build Status](https://github.com/estelar9/DVDStyler-Modernized/actions/workflows/release.yml/badge.svg)
 
 This repository is an updated and modernized fork of **DVDStyler**, a cross-platform free DVD authoring application for the creation of professional-looking DVDs.
 
