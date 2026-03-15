@@ -25,12 +25,12 @@ jobs:
             mingw-w64-ucrt-x86_64-toolchain
             mingw-w64-ucrt-x86_64-wxwidgets3.2-msw
             mingw-w64-ucrt-x86_64-ffmpeg
-            mingw-w64-ucrt-x86_64-libsvg
-            mingw-w64-ucrt-x86_64-wxsvg
+            mingw-w64-ucrt-x86_64-wxsvg-wx3.2
             mingw-w64-ucrt-x86_64-libxml2
-            dvdauthor
-            mjpegtools
-            cdrtools
+            mingw-w64-ucrt-x86_64-libexif
+            msys/dvdauthor
+            msys/mjpegtools
+            msys/cdrtools
 
       - name: Build and Package
         shell: pwsh
