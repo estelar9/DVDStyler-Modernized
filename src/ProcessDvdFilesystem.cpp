@@ -92,7 +92,7 @@ bool ProcessDvdFilesystem::Execute() {
 		wxDir d(dvdTmpDir);
 		wxString fname;
 		while (d.GetFirst(&fname, wxEmptyString, wxDIR_FILES))
-			DeleteFile(dvdTmpDir + fname);
+			SafeDeleteFile(dvdTmpDir + fname);
 	}
 	progressDlg->IncStep();
 	return true;

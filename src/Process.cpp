@@ -11,19 +11,20 @@
 #include "ProcessExecute.h"
 
 bool Process::Exec(wxString command, wxString inputFile, wxString outputFile) {
-	ProcessExecute exec(progressDlg);
-	return exec.Execute(command, inputFile, outputFile);
+  ProcessExecute exec(progressDlg);
+  return exec.Execute(command, inputFile, outputFile);
 }
 
 bool Process::ExecAsync(wxString command) {
-	progressDlg->AddDetailMsg(_("Executing command: ") + command);
-	return wxExecute(command) != 0;
+  progressDlg->AddDetailMsg(_("Executing command: ") + command);
+  return wxExecute(command) != 0;
 }
 
-bool Process::DeleteFile(wxString fname) {
-	if (wxFileExists(fname) && !wxRemoveFile(fname)) {
-		progressDlg->AddDetailMsg(wxString::Format(_("Can't remove file '%s'"), fname.c_str()), *wxRED);
-		return false;
-	}
-	return true;
+bool Process::SafeDeleteFile(wxString fname) {
+  if (wxFileExists(fname) && !wxRemoveFile(fname)) {
+    progressDlg->AddDetailMsg(
+        wxString::Format(_("Can't remove file '%s'"), fname.c_str()), *wxRED);
+    return false;
+  }
+  return true;
 }

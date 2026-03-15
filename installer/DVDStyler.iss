@@ -1,13 +1,13 @@
 ﻿[Setup]
 AppName=DVDStyler     
-AppVerName=DVDStyler v3.2 
+AppVerName=DVDStyler v3.3b4
 AppPublisher=Thüring IT-Consulting
 AppPublisherURL=http://www.dvdstyler.org
 AppSupportURL=http://www.dvdstyler.org
 AppUpdatesURL=http://www.dvdstyler.org
 DefaultDirName={pf}\DVDStyler
 DefaultGroupName=DVDStyler
-OutputBaseFilename=DVDStyler-3.2-win64
+OutputBaseFilename=DVDStyler-3.3b4-win64
 Compression=lzma
 SolidCompression=yes
 UninstallDisplayIcon={app}\bin\DVDStyler.exe  
@@ -49,13 +49,13 @@ Name: "pt_BR"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "ro"; MessagesFile: "Languages\Romanian.isl"
 Name: "ru"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "si"; MessagesFile: "Languages\Sinhala.islu"
-Name: "sk"; MessagesFile: "Languages\Slovak.isl"
+;Name: "sk"; MessagesFile: "Languages\Slovak.isl"
 Name: "sl"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "sr"; MessagesFile: "Languages\SerbianLatin.isl"
 Name: "sv"; MessagesFile: "Languages\Swedish.isl"
 Name: "tr"; MessagesFile: "compiler:Languages\Turkish.isl"
 Name: "uk"; MessagesFile: "compiler:Languages\Ukrainian.isl"
-Name: "vi"; MessagesFile: "Languages\Vietnamese.islu"
+Name: "vi"; MessagesFile: "Languages\Vietnamese.isl"
 Name: "zh_CN"; MessagesFile: "Languages\ChineseSimp.isl"
 Name: "zh_TW"; MessagesFile: "Languages\ChineseTrad.isl"
 
@@ -101,47 +101,48 @@ Source: "..\transitions\*.xml"; DestDir: "{app}\transitions"; Flags: ignoreversi
 Source: "..\transitions\*.png"; DestDir: "{app}\transitions"; Flags: ignoreversion
 Source: "..\data\*.mpg"; DestDir: "{app}\data"; Flags: ignoreversion
 Source: "..\data\*.rgb"; DestDir: "{app}\data"; Flags: ignoreversion
-Source: "..\docs\help_*.zip"; DestDir: "{app}\docs"; Flags: ignoreversion
+Source: "..\docs\*.pdf"; DestDir: "{app}\docs"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\docs\*.xml"; DestDir: "{app}\docs"; Flags: ignoreversion skipifsourcedoesntexist
 Source: "..\COPYING"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\ChangeLog"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\README"; DestDir: "{app}"; Flags: ignoreversion
 
-Source: "..\locale\ar\*"; DestDir: "{app}\locale\ar"; Flags: ignoreversion
-Source: "..\locale\bg\*"; DestDir: "{app}\locale\bg"; Flags: ignoreversion
-Source: "..\locale\ca\*"; DestDir: "{app}\locale\ca"; Flags: ignoreversion
-Source: "..\locale\cs\*"; DestDir: "{app}\locale\cs"; Flags: ignoreversion
-Source: "..\locale\da\*"; DestDir: "{app}\locale\da"; Flags: ignoreversion
-Source: "..\locale\de\*"; DestDir: "{app}\locale\de"; Flags: ignoreversion
-Source: "..\locale\el\*"; DestDir: "{app}\locale\el"; Flags: ignoreversion
-Source: "..\locale\es\*"; DestDir: "{app}\locale\es"; Flags: ignoreversion 
-Source: "..\locale\es_ar\*"; DestDir: "{app}\locale\es_ar"; Flags: ignoreversion
-Source: "..\locale\eu\*"; DestDir: "{app}\locale\eu"; Flags: ignoreversion
-Source: "..\locale\fi\*"; DestDir: "{app}\locale\fi"; Flags: ignoreversion
-Source: "..\locale\fr\*"; DestDir: "{app}\locale\fr"; Flags: ignoreversion
-Source: "..\locale\hu\*"; DestDir: "{app}\locale\hu"; Flags: ignoreversion
-Source: "..\locale\hy\*"; DestDir: "{app}\locale\hy"; Flags: ignoreversion
-Source: "..\locale\it\*"; DestDir: "{app}\locale\it"; Flags: ignoreversion
-Source: "..\locale\ja\*"; DestDir: "{app}\locale\ja"; Flags: ignoreversion
-Source: "..\locale\ko\*"; DestDir: "{app}\locale\ko"; Flags: ignoreversion
-Source: "..\locale\mk\*"; DestDir: "{app}\locale\mk"; Flags: ignoreversion
-Source: "..\locale\nb\*"; DestDir: "{app}\locale\nb"; Flags: ignoreversion
-Source: "..\locale\nl\*"; DestDir: "{app}\locale\nl"; Flags: ignoreversion
-Source: "..\locale\pl\*"; DestDir: "{app}\locale\pl"; Flags: ignoreversion
-Source: "..\locale\pt\*"; DestDir: "{app}\locale\pt"; Flags: ignoreversion
-Source: "..\locale\pt_BR\*"; DestDir: "{app}\locale\pt_BR"; Flags: ignoreversion
-Source: "..\locale\ro\*"; DestDir: "{app}\locale\ro"; Flags: ignoreversion
-Source: "..\locale\ru\*"; DestDir: "{app}\locale\ru"; Flags: ignoreversion
-Source: "..\locale\si\*"; DestDir: "{app}\locale\si"; Flags: ignoreversion
-Source: "..\locale\sk\*"; DestDir: "{app}\locale\sk"; Flags: ignoreversion
-Source: "..\locale\sl\*"; DestDir: "{app}\locale\sl"; Flags: ignoreversion
-Source: "..\locale\sr\*"; DestDir: "{app}\locale\sr"; Flags: ignoreversion
-Source: "..\locale\sv\*"; DestDir: "{app}\locale\sv"; Flags: ignoreversion
-Source: "..\locale\tr\*"; DestDir: "{app}\locale\tr"; Flags: ignoreversion
-Source: "..\locale\uk\*"; DestDir: "{app}\locale\uk"; Flags: ignoreversion
-Source: "..\locale\uz\*"; DestDir: "{app}\locale\uz"; Flags: ignoreversion
-Source: "..\locale\vi\*"; DestDir: "{app}\locale\vi"; Flags: ignoreversion
-Source: "..\locale\zh_CN\*"; DestDir: "{app}\locale\zh_CN"; Flags: ignoreversion
-Source: "..\locale\zh_TW\*"; DestDir: "{app}\locale\zh_TW"; Flags: ignoreversion
+Source: "..\locale\ar\*"; DestDir: "{app}\locale\ar"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\bg\*"; DestDir: "{app}\locale\bg"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\ca\*"; DestDir: "{app}\locale\ca"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\cs\*"; DestDir: "{app}\locale\cs"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\da\*"; DestDir: "{app}\locale\da"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\de\*"; DestDir: "{app}\locale\de"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\el\*"; DestDir: "{app}\locale\el"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\es\*"; DestDir: "{app}\locale\es"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\es_ar\*"; DestDir: "{app}\locale\es_ar"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\eu\*"; DestDir: "{app}\locale\eu"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\fi\*"; DestDir: "{app}\locale\fi"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\fr\*"; DestDir: "{app}\locale\fr"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\hu\*"; DestDir: "{app}\locale\hu"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\hy\*"; DestDir: "{app}\locale\hy"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\it\*"; DestDir: "{app}\locale\it"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\ja\*"; DestDir: "{app}\locale\ja"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\ko\*"; DestDir: "{app}\locale\ko"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\mk\*"; DestDir: "{app}\locale\mk"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\nb\*"; DestDir: "{app}\locale\nb"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\nl\*"; DestDir: "{app}\locale\nl"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\pl\*"; DestDir: "{app}\locale\pl"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\pt\*"; DestDir: "{app}\locale\pt"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\pt_BR\*"; DestDir: "{app}\locale\pt_BR"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\ro\*"; DestDir: "{app}\locale\ro"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\ru\*"; DestDir: "{app}\locale\ru"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\si\*"; DestDir: "{app}\locale\si"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\sk\*"; DestDir: "{app}\locale\sk"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\sl\*"; DestDir: "{app}\locale\sl"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\sr\*"; DestDir: "{app}\locale\sr"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\sv\*"; DestDir: "{app}\locale\sv"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\tr\*"; DestDir: "{app}\locale\tr"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\uk\*"; DestDir: "{app}\locale\uk"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\uz\*"; DestDir: "{app}\locale\uz"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\vi\*"; DestDir: "{app}\locale\vi"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\zh_CN\*"; DestDir: "{app}\locale\zh_CN"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "..\locale\zh_TW\*"; DestDir: "{app}\locale\zh_TW"; Flags: ignoreversion skipifsourcedoesntexist
 
 [Icons]
 Name: "{group}\DVDStyler"; Filename: "{app}\bin\DVDStyler.exe"

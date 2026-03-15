@@ -17,31 +17,34 @@
  */
 class Process {
 public:
-	/** Constructor */
-	Process(ProgressDlg* progressDlg) { this->progressDlg = progressDlg; }
-	/** Denstructor */
-	virtual ~Process() {}
-	
-	/** Executes process */
-    virtual bool Execute() = 0;
-    
-    /** Returns true, if process need be executed */
-    virtual bool IsNeedExecute() = 0;
-    
-    /** Returns true, if gauge need be updated */
-    virtual bool IsUpdateGauge() { return true; };
+  /** Constructor */
+  Process(ProgressDlg *progressDlg) { this->progressDlg = progressDlg; }
+  /** Denstructor */
+  virtual ~Process() {}
+
+  /** Executes process */
+  virtual bool Execute() = 0;
+
+  /** Returns true, if process need be executed */
+  virtual bool IsNeedExecute() = 0;
+
+  /** Returns true, if gauge need be updated */
+  virtual bool IsUpdateGauge() { return true; };
 
 protected:
-    ProgressDlg* progressDlg;
-	
-	/** Executes given command */
-	bool Exec(wxString command, wxString inputFile = wxEmptyString, wxString outputFile = wxEmptyString);
-	
-	/** Executes given command in background */
-	bool ExecAsync(wxString command);
-	
-	/** Removes given file and print error message if it failed */
-	bool DeleteFile(wxString fname);
-};  
+  ProgressDlg *progressDlg;
+
+  /** Executes given command */
+  bool Exec(wxString command, wxString inputFile = wxEmptyString,
+            wxString outputFile = wxEmptyString);
+
+  /** Executes given command in background */
+  bool ExecAsync(wxString command);
+
+  /** Removes given file and print error message if it failed.
+   *  Named SafeDeleteFile to avoid collision with Windows SDK macro
+   * DeleteFile→DeleteFileW. */
+  bool SafeDeleteFile(wxString fname);
+};
 
 #endif // DS_PROCESS_H

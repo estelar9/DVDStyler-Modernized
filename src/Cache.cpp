@@ -138,11 +138,12 @@ bool CacheEntry::PutXML(wxSvgXmlNode* node) {
 		m_audioBitrate = (int) lval;
 	}
 	double dval;
+	// BUG FIX: was incorrectly assigning lval (integer) instead of dval (double)
 	if (node->GetPropVal(wxT("startTime"), &val) && val.ToDouble(&dval)) {
-		m_startTime = lval;
+		m_startTime = dval;
 	}
 	if (node->GetPropVal(wxT("recordingTime"), &val) && val.ToDouble(&dval)) {
-		m_recordingTime = lval;
+		m_recordingTime = dval;
 	}
 	node->GetPropVal(wxT("videoFilters"), &m_videoFilters);
 	node->GetPropVal(wxT("audioFilters"), &m_audioFilters);
@@ -209,9 +210,10 @@ long Cache::GetSize() {
 	long size = 0;
 	for (const CacheEntry& entry : m_cacheSet) {
 		wxString filename = GetFileName(entry.GetIdx());
-		if (wxFile::Exists(filename)) {
-			size += wxFile(filename).Length()/1024;
-		}
+		// PERF FIX: use wxFileName::GetSize() instead of opening the file
+		wxULongLong fsize = wxFileName::GetSize(filename);
+		if (fsize != wxInvalidSize)
+			size += (long)(fsize.GetValue() / 1024);
 	}
 	return size;
 }
@@ -356,12 +358,13 @@ void Cache::Save() {
  * Shows prompt dialog and clears or saves cache 
  */
 void Cache::ShowClearPrompt(wxWindow* parent) {
-	// check entries
-	for (CacheSet::iterator it = m_cacheSet.begin(); it != m_cacheSet.end(); it++) {
+	// BUG FIX: erase() invalidates the iterator; use return value of erase()
+	for (CacheSet::iterator it = m_cacheSet.begin(); it != m_cacheSet.end(); ) {
 		wxString filename = GetFileName(it->GetIdx());
-		if (!wxFile::Exists(filename)) {
-			m_cacheSet.erase(it);
-		}
+		if (!wxFile::Exists(filename))
+			it = m_cacheSet.erase(it);
+		else
+			++it;
 	}
 	if (GetCount() == 0) {
 		Save();

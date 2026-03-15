@@ -1,0 +1,23 @@
+# Default behavior: handle line endings automatically
+* text=auto
+
+# Force LF for shell scripts and config files (Required for MSYS2/Bash)
+configure text eol=lf
+config.guess text eol=lf
+config.sub text eol=lf
+compile text eol=lf
+install-sh text eol=lf
+missing text eol=lf
+depcomp text eol=lf
+*.sh text eol=lf
+src/sdl-config text eol=lf
+src/sdl2-config text eol=lf
+
+# Explicitly mark binary files
+*.bmp binary
+*.png binary
+*.jpg binary
+*.ico binary
+*.zip binary
+*.exe binary
+*.dll binary

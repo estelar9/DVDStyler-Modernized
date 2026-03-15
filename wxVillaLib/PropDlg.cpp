@@ -13,7 +13,7 @@
 #include <wx/fontdlg.h>
 #include <wx/colordlg.h>
 #ifdef __WXMSW__
-#include <wx/generic/colrdlgg.h>
+#include <wx/colordlg.h>
 #endif
 #include <wx/filedlg.h>
 #include <wx/dirdlg.h>
@@ -766,7 +766,7 @@ void wxPropDlg::OnSelectColour(wxCommandEvent& event) {
 	m_colourData.SetChooseAlpha(true);
 #endif
 #ifdef __WXMSW__
-	wxGenericColourDialog dialog(propWindow, &m_colourData);
+	wxColourDialog dialog(propWindow, &m_colourData);
 #else
 	wxColourDialog dialog(propWindow, &m_colourData);
 #endif

@@ -1,20 +1,46 @@
-/Makefile
-/cfg.sh
-/tmp/
-/DVDStyler.layout
-/README.txt
-/.pydevproject
-/autom4te.cache/
-/aclocal.m4
-/Makefile.in
-/Info.plist
-/compile
-/config.guess
-/config.log
-/config.status
-/config.sub
-/configure
-/*.bz2
-/DVDStyler.app/
-*.dmg
-/.DS_Store
+# MSYS2 / MinGW / Build artifacts
+*.o
+*.a
+*.la
+*.lo
+*.exe
+*.dll
+*.pot
+*.mo
+*.deps/
+.deps/
+Makefile
+Makefile.in
+config.status
+config.log
+config.cache
+autom4te.cache/
+libtool
+stamp-h1
+.antigravity/
+.gemini/
+
+# DVDStyler specific staging/packaging artifacts
+src/fonts.conf
+src/*.exe
+src/*.dll
+src/*.bat
+src/*.rtf
+src/*.pdf
+src/*.xml
+
+# Inno Setup artifacts
+installer/Output/
+
+# Portable distribution
+DVDStyler-*-portable.zip
+
+# Windows specific
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*~
