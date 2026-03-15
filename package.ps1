@@ -10,7 +10,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $ROOT = $PSScriptRoot
-$MSYS2_ROOT = "C:\msys64"
+$MSYS2_ROOT = if ($env:MSYS2_ROOT) { $env:MSYS2_ROOT } else { "C:\msys64" }
 $UCRT = "$MSYS2_ROOT\ucrt64\bin"
 $USR_BIN = "$MSYS2_ROOT\usr\bin"
 $SRC = Join-Path $ROOT "src"
