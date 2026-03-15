@@ -25,7 +25,7 @@ This fork aims to provide a **"Just Works"** experience—smoother, faster, and 
 
 ### For Users
 
-If you just want to use DVDStyler, download the latest version from the [Releases](https://github.com/your-username/dvdstyler-DVDStyler/releases) section:
+If you just want to use DVDStyler, download the latest version from the [Releases](https://github.com/estelar9/DVDStyler-Modernized/releases) section:
 
 - **Installer (.exe)**: Recommended for a standard setup.
 - **Portable (.zip)**: Just extract and run `dvdstyler.exe`. No installation required.
