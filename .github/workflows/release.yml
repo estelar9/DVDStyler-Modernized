@@ -28,9 +28,6 @@ jobs:
             mingw-w64-ucrt-x86_64-wxsvg-wx3.2
             mingw-w64-ucrt-x86_64-libxml2
             mingw-w64-ucrt-x86_64-libexif
-            msys/dvdauthor
-            msys/mjpegtools
-            msys/cdrtools
 
       - name: Build and Package
         shell: pwsh
